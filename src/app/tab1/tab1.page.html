@@ -13,5 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container *ngIf="flag" name="Tab 1 page"></app-explore-container>
+  <ng-container *ngFor="let item of items; let index = index">
+    <app-explore-container [name]="'Tab ' + index + ' page'"></app-explore-container>
+  </ng-container>
 </ion-content>
