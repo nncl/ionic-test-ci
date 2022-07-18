@@ -7,8 +7,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  flag = true;
+  items = [];
 
   constructor() {}
+
+  add(): void {
+    this.items.push({});
+  }
+
+  remove(index: number) {
+    this.items.splice(index, 1);
+  }
 
 }
