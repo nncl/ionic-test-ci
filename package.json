@@ -7,8 +7,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "npm run lint:prod && npm run test:prod && ionic cap copy --prod",
     "test": "ng test",
+    "test:prod": "ng test --watch=false --browsers ChromeHeadless",
     "lint": "ng lint",
+    "lint:prod": "ng lint --fix",
     "e2e": "ng e2e"
   },
   "private": true,
