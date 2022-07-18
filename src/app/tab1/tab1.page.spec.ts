@@ -33,4 +33,14 @@ describe('Tab1Page', () => {
     
     expect(containers.length).toEqual(1);
   });
+
+  it('should NOT have any app-explore-container', () => {
+    component.flag = false;
+
+    fixture.detectChanges();
+
+    const containers = fixture.debugElement.queryAll(By.css('app-explore-container'));
+
+    expect(containers.length).toEqual(0);
+  });
 });
