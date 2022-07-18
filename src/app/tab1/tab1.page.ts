@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  flag = false;
 
-  flag = true;
+  constructor() {}
 
 }
