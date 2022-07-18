@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { By } from '@angular/platform-browser';
 
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { Tab1Page } from './tab1.page';
 
 describe('Tab1Page', () => {
@@ -25,5 +26,21 @@ describe('Tab1Page', () => {
 
   it('should have trullable flag', () => {
     expect(component.flag).toBeTrue();
+  });
+
+  it('should have one app-explore-container', () => {
+    const containers = fixture.debugElement.queryAll(By.css('app-explore-container'));
+    
+    expect(containers.length).toEqual(1);
+  });
+
+  it('should NOT have any app-explore-container', () => {
+    component.flag = false;
+
+    fixture.detectChanges();
+
+    const containers = fixture.debugElement.queryAll(By.css('app-explore-container'));
+
+    expect(containers.length).toEqual(0);
   });
 });
